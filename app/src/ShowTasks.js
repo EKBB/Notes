@@ -1,8 +1,8 @@
 import { Card, Container } from 'react-bootstrap'
 import { ListQuestionnaires } from './components/ListQuestionnaires';
-import { AlignCenter } from 'react-bootstrap-icons';
+import { AlignCenter, ListTask } from 'react-bootstrap-icons';
 
-export const ShowQuestionnaires = () => {
+export const ShowTask = () => {
     const user = JSON.parse(localStorage.user);
 
     return (
@@ -11,7 +11,7 @@ export const ShowQuestionnaires = () => {
                 <Card.Body>
                     <Card.Title>{user.rol == "administrator" ? "Tareas creadas" : "Tus tareas"}</Card.Title>
                     <Card.Text><b>Tareas recientes: ???</b></Card.Text>
-                    <ListQuestionnaires rol={user.rol} />
+                    <ListTask rol={user.rol} />
                 </Card.Body>
             </Card>
         </Container>

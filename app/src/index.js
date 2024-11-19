@@ -8,43 +8,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { RecoverPassword } from './RecoverPassword';
-import { ListUsers } from './ListUsers';
-import { CreateQuestionnaire } from './CreateQuestionnaire';
-import { Header } from './components/Header';
-import { Dashboard } from './Dashboard';
-import { ShowQuestionnaires } from './ShowQuestionnaires';
-import { RegisterUser } from './RegisterUser';
+import { Task } from './LIst';
+
 
 const router = createBrowserRouter([
   {
-    path: "/home",
-    element: <Dashboard />,
-  },
-  {
-    path: "/list-users",
-    element: <ListUsers />,
-  },
-  {
-    path: "/list-q",
-    element: <ShowQuestionnaires />,
-  },
-  {
     path: "/",
-    element: <App />,
+    element: <Task />,
   },
-  {
-    path: "/recover-password",
-    element: <RecoverPassword />,
-  },
-  {
-    path: "/register-user",
-    element: <RegisterUser />,
-  },
-  {
-    path: "/create-questionnaires/:id",
-    element: <CreateQuestionnaire />,
-  },
+ 
+ 
 ]);
 const user = {
   name:"Jesus",
@@ -58,9 +31,7 @@ root.render(
   <React.StrictMode>
     <>
       {
-        user?.logined == true && (
-          <Header />
-        )
+        user?.logined == true 
       }
       <RouterProvider router={router} />
     </>
